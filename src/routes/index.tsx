@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useState } from 'react';
-import { ArrowDown, ArrowRight, ArrowUpRight, CalendarDays, Crown, Flower2, Heart, House, MapPin, Menu, MessageCircle, Plus, Sparkles, X } from 'lucide-react';
+import { ArrowDown, ArrowRight, ArrowUpRight, CalendarDays, Crown, Flower2, Heart, House, MapPin, Menu, MessageCircle, Plus, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
 import { BookingForm } from '@/components/beauty/booking-form';
@@ -25,7 +25,7 @@ const services = [
   { name: 'Hairstyling', subtitle: 'Your hair. Beautifully styled.', text: 'An effortless style or an elegant updo. Enquire about a hairstyle to complement your day.', image: hair, imageClass: '', alt: 'Temporary inspiration photo of a flower-adorned updo' },
   { name: 'Skincare', subtitle: 'A moment to care for yourself.', text: 'Make room for a little self-care. Ask us about the skincare options available for your needs.', image: details, imageClass: '', alt: 'Temporary inspiration photo of skincare products' },
   { name: 'Other beauty services', subtitle: 'The little finishing touches.', text: 'Have something else in mind? Share what you’re looking for and we’ll discuss the possibilities.', image: care, imageClass: '', alt: 'Temporary inspiration photo of blush-toned nails' },
-];
+] as const;
 const faqs = [
   ['How do I enquire about an appointment?', 'Choose a service and fill in your preferred date, time and address below. You can prepare and copy an enquiry draft. Sending enquiries will be available once the business contact details are confirmed.'],
   ['Is my appointment confirmed when I fill in the form?', 'No. This form only prepares an enquiry draft; it does not send or save your details. An appointment is confirmed only after you speak with the business and agree on availability and service details.'],
