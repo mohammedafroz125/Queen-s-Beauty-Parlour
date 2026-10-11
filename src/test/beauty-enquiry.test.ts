@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { beautyBusiness, formatEnquiry, whatsappUrl } from '@/lib/beauty';
+import { beautyBusiness, formatEnquiry, phonePattern, whatsappUrl } from '@/lib/beauty';
 
 const enquiry = { service: 'Hairstyling', name: 'Test Guest', phone: '9000000000', date: '2026-11-20', time: '10:30', address: 'Borananda, Hyderabad', notes: 'A soft updo' };
 
