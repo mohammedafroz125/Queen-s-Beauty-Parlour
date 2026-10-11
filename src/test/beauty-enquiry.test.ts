@@ -33,3 +33,18 @@ describe('Beauty enquiry boundaries', () => {
     expect(decodeURIComponent(url!.split('?text=')[1] ?? '')).toContain('Locality / address: Borananda, Hyderabad');
   });
 });
+
+describe('Phone field validation', () => {
+  const re = new RegExp(`^(?:${phonePattern})$`, 'v');
+  it('compiles as a browser pattern so the field keeps validating', () => {
+    expect(() => new RegExp(`^(?:${phonePattern})$`, 'v')).not.toThrow();
+  });
+  it('accepts real phone numbers and rejects letters, short or separator-only input', () => {
+    expect(re.test('+91 98765 43210')).toBe(true);
+    expect(re.test('9000000000')).toBe(true);
+    expect(re.test('040-2345 6789')).toBe(true);
+    expect(re.test('abcdefghij')).toBe(false);
+    expect(re.test('123')).toBe(false);
+    expect(re.test('-------')).toBe(false);
+  });
+});
