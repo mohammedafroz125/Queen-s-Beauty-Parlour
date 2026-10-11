@@ -30,6 +30,6 @@ describe('Beauty enquiry boundaries', () => {
     const url = whatsappUrl(beautyBusiness.whatsappNumber, formatEnquiry(enquiry));
     expect(url).not.toContain(' ');
     expect(url).toContain(encodeURIComponent('Preferred date: 2026-11-20'));
-    expect(decodeURIComponent(url!.split('?text=')[1])).toContain('Locality / address: Borananda, Hyderabad');
+    expect(decodeURIComponent(url!.split('?text=')[1] ?? '')).toContain('Locality / address: Borananda, Hyderabad');
   });
 });
