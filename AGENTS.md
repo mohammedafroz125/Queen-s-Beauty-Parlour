@@ -13,3 +13,4 @@
 - Keep the core beauty site as a single scrolling homepage with reusable enquiry and presentation components; the requested experience is one homepage.
 - Keep business contact configuration and pure enquiry formatting in a browser-safe shared module; unconfirmed contact details must never produce a live destination.
 - Prepare enquiry drafts entirely in memory without storage or network submission until a backend is explicitly requested; this prevents false booking confirmations.
+- Keep the canonical service catalogue in the browser-safe shared business module so service cards and enquiry choices cannot drift apart.
