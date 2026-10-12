@@ -156,7 +156,8 @@
 .contact-section { background: var(--secondary); padding: 57px 0; }
 .contact-layout { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
 .contact-section h2 { font-size: 44px; margin-top: 10px; }
-.contact-layout > div > p:last-child { margin-top: 13px; font-size: 11px; display: flex; align-items: center; gap: 7px; }
+.contact-layout > div > .contact-location,.contact-layout > div > .contact-hours { margin-top: 13px; font-size: 11px; }
+.contact-layout > div > .contact-location { display: flex; align-items: center; gap: 7px; }
 .contact-actions > p { font-size: 10px; line-height: 1.8; margin-top: 13px; color: var(--muted-foreground); }
 .site-footer { padding-top: 48px; }
 .footer-top { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; align-items: center; padding-bottom: 37px; }
