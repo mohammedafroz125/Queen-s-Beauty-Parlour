@@ -3,7 +3,7 @@ import { ArrowUpRight, Check, Copy, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { beautyBusiness, formatEnquiry, phonePattern, serviceNames, whatsappUrl } from '@/lib/beauty';
+import { beautyBusiness, formatEnquiry, phonePattern, serviceCategories, whatsappUrl } from '@/lib/beauty';
 
 export function BookingForm({ service, onServiceChange }: { service: string; onServiceChange: (value: string) => void }) {
   const [draft, setDraft] = useState('');
@@ -25,7 +25,7 @@ export function BookingForm({ service, onServiceChange }: { service: string; onS
   return (
     <form onSubmit={prepare} className="booking-form" onChange={() => { setDraft(''); setCopied(false); }}>
       <div className="form-grid">
-        <label className="form-field full">Select a service <select name="service" required value={service} onChange={event => onServiceChange(event.target.value)}><option value="">What can we help you with?</option>{serviceNames.map(name => <option key={name}>{name}</option>)}</select></label>
+        <label className="form-field full">Select a service <select name="service" required value={service} onChange={event => onServiceChange(event.target.value)}><option value="">What can we help you with?</option>{serviceCategories.map(category => <optgroup key={category.name} label={category.name}>{category.services.map(name => <option key={name} value={name}>{name}</option>)}</optgroup>)}</select></label>
         <label className="form-field">Your name <Input name="name" autoComplete="name" placeholder="Full name" required maxLength={100} /></label>
         <label className="form-field">Phone number <Input name="phone" type="tel" autoComplete="tel" placeholder="Your phone number" required pattern={phonePattern} title="Enter a phone number with at least 7 digits, e.g. +91 98765 43210" /></label>
         <label className="form-field">Preferred date <Input name="date" type="date" required /></label>

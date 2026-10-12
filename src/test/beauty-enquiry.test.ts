@@ -1,9 +1,22 @@
 import { describe, expect, it } from 'vitest';
-import { beautyBusiness, formatEnquiry, phonePattern, whatsappUrl } from '@/lib/beauty';
+import { beautyBusiness, formatEnquiry, phonePattern, serviceCategories, serviceNames, whatsappUrl } from '@/lib/beauty';
 
 const enquiry = { service: 'Hairstyling', name: 'Test Guest', phone: '9000000000', date: '2026-11-20', time: '10:30', address: 'Borananda, Hyderabad', notes: 'A soft updo' };
 
 describe('Beauty enquiry boundaries', () => {
+  it('keeps exactly the requested service catalogue and category groupings', () => {
+    expect(serviceCategories).toEqual([
+      { name: 'Makeup', services: ['Makeup'] },
+      { name: 'Hair Services', services: ['Hair Straightening', 'Hair Curls', 'Baby Haircut', 'V-Cut', 'U-Cut', 'Feather Cut'] },
+      { name: 'Facial & Skin Care', services: ['Diamond Facial', 'Gold Facial', 'D-Tan'] },
+      { name: 'Threading', services: ['Eyebrow Threading', 'Upper Lip Threading'] },
+      { name: 'Waxing', services: ['Waxing'] },
+    ]);
+    expect(serviceNames).toEqual(serviceCategories.flatMap(category => category.services));
+  });
+  it('shows the confirmed business hours without adding days', () => {
+    expect(beautyBusiness.businessHours).toBe('5:00 PM–11:00 PM');
+  });
   it('sends enquiries to the confirmed business WhatsApp number', () => {
     expect(whatsappUrl(beautyBusiness.whatsappNumber, 'Enquiry')).toBe('https://wa.me/918919669857?text=Enquiry');
   });
