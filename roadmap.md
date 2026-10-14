@@ -3,6 +3,7 @@
 - [x] Add enquiry draft, service selection, FAQ and mobile navigation.
 - [x] Verify the enquiry flow and layout; leave all integrations disconnected.
 - [x] Connect the enquiry flow to the business WhatsApp (+91 89196 69857) with a prefilled, URL-encoded message; verified on desktop and mobile.
-- [ ] Use one central catalogue for the requested five service categories and all selectable services.
-- [ ] Display business hours as 5:00 PM–11:00 PM in Contact without implying availability.
-- [ ] Recheck WhatsApp validation, encoded contents, service options, tests, and preview errors.
+- [ ] Finish and verify the service catalogue, hours, and WhatsApp enquiry flow.
+- [ ] Convert homepage section navigation into the requested seven-page website with shared navigation and footer.
+- [ ] Build Services, Makeup Looks, Gallery, About, Book, and Contact pages using the existing visual system and distinct inspiration imagery.
+- [ ] Verify direct routes, navigation, preselected booking, responsive layout, imagery, tests, and preview errors.
