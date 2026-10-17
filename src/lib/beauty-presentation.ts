@@ -15,6 +15,7 @@ import careTwo from '@/assets/care-2.webp';
 import careThree from '@/assets/care-3.webp';
 import careFour from '@/assets/care-4.webp';
 import careFive from '@/assets/care-5.webp';
+import careSix from '@/assets/care-6.webp';
 import waxImage from '@/assets/beauty-inspiration-waxing.jpg';
 import galleryOne from '@/assets/gallery-1.webp';
 import galleryTwo from '@/assets/gallery-2.webp';
