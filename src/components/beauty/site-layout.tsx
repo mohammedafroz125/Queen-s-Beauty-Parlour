@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { ReactNode } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ArrowUpRight, Crown, Heart, Menu, MessageCircle, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -20,7 +21,7 @@ function Brand({ footer = false }: { footer?: boolean }) {
   </Link>;
 }
 
-export function SiteLayout({ children }: { children: React.ReactNode }) {
+export function SiteLayout({ children }: { children: ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const whatsapp = whatsappUrl(beautyBusiness.whatsappNumber, 'Hello Queen’s Beauty Parlour, I would like to enquire about a beauty service.');
   return <>
@@ -44,7 +45,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
     <main id="main">{children}</main>
     <footer className="site-footer">
       <div className="container footer-top"><Brand footer /><p>Beauty at home.<br />A little time for yourself.</p>
-        <nav aria-label="Footer navigation">{[...navigation.slice(1, 5), { label: 'Book appointment', to: '/book' as const }, navigation[5]].map(item => <Link key={item.to} to={item.to}>{item.label}</Link>)}</nav>
+        <nav aria-label="Footer navigation">{[...navigation.slice(1), { label: 'Book appointment', to: '/book' as const }].map(item => <Link key={item.to} to={item.to}>{item.label}</Link>)}</nav>
       </div>
       <div className="container footer-bottom"><p>© {new Date().getUTCFullYear()} Queen’s Beauty Parlour.</p><span>Made with a little care <Heart size={12} /></span></div>
     </footer>

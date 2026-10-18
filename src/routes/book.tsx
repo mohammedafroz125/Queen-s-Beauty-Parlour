@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { CalendarDays, Flower2 } from 'lucide-react';
 import { BookingForm } from '@/components/beauty/booking-form';
 import { PageHeading } from '@/components/beauty/presentation';
-import { serviceNames } from '@/lib/beauty';
+import { getServiceFromSearch } from '@/lib/beauty';
 
 export const Route = createFileRoute('/book')({
-  validateSearch: (search: Record<string, unknown>) => ({ service: typeof search.service === 'string' && serviceNames.includes(search.service) ? search.service : '' }),
+  validateSearch: (search: Record<string, unknown>) => ({ service: getServiceFromSearch(search.service) }),
   head: () => ({ meta: [
     { title: 'Book an Appointment Enquiry | Queen’s Beauty Parlour' },
     { name: 'description', content: 'Prepare an at-home beauty service enquiry for Queen’s Beauty Parlour and send it through WhatsApp.' },
