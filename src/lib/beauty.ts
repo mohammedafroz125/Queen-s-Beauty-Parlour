@@ -14,6 +14,9 @@ export const serviceCategories = [
   { name: 'Waxing', services: ['Waxing'] },
 ] as const;
 export const serviceNames = serviceCategories.flatMap(category => category.services);
+export function getServiceFromSearch(value: unknown): string {
+  return typeof value === 'string' && (serviceNames as readonly string[]).includes(value) ? value : '';
+}
 // Must compile as a JS regex with the 'v' flag: browsers drop an invalid pattern silently, which stops the field validating at all.
 export const phonePattern = "(?=(\\D*\\d){7})[\\d\\s\\(\\)\\+\\.\\-]{7,20}";
 export type Enquiry = { service: string; name: string; phone: string; date: string; time: string; address: string; notes: string };

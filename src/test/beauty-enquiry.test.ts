@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { beautyBusiness, formatEnquiry, phonePattern, serviceCategories, serviceNames, whatsappUrl } from '@/lib/beauty';
+import { beautyBusiness, formatEnquiry, getServiceFromSearch, phonePattern, serviceCategories, serviceNames, whatsappUrl } from '@/lib/beauty';
 
-const enquiry = { service: 'Hairstyling', name: 'Test Guest', phone: '9000000000', date: '2026-11-20', time: '10:30', address: 'Borananda, Hyderabad', notes: 'A soft updo' };
+const enquiry = { service: 'Hair Straightening', name: 'Test Guest', phone: '9000000000', date: '2026-11-20', time: '10:30', address: 'Borananda, Hyderabad', notes: 'A soft updo' };
 
 describe('Beauty enquiry boundaries', () => {
   it('keeps exactly the requested service catalogue and category groupings', () => {
@@ -17,6 +17,11 @@ describe('Beauty enquiry boundaries', () => {
   it('shows the confirmed business hours without adding days', () => {
     expect(beautyBusiness.businessHours).toBe('5:00 PM–11:00 PM');
   });
+  it('only preselects a confirmed service from a booking link', () => {
+    expect(getServiceFromSearch('Hair Straightening')).toBe('Hair Straightening');
+    expect(getServiceFromSearch('Natural makeup')).toBe('');
+    expect(getServiceFromSearch(undefined)).toBe('');
+  });
   it('sends enquiries to the confirmed business WhatsApp number', () => {
     expect(whatsappUrl(beautyBusiness.whatsappNumber, 'Enquiry')).toBe('https://wa.me/918919669857?text=Enquiry');
   });
@@ -26,7 +31,7 @@ describe('Beauty enquiry boundaries', () => {
   });
   it('preserves the chosen service and appointment preferences in a draft', () => {
     const draft = formatEnquiry(enquiry);
-    expect(draft).toContain('Service: Hairstyling');
+    expect(draft).toContain('Service: Hair Straightening');
     expect(draft).toContain('Name: Test Guest');
     expect(draft).toContain('Phone: 9000000000');
     expect(draft).toContain('Preferred date: 2026-11-20');
@@ -43,7 +48,7 @@ describe('Beauty enquiry boundaries', () => {
     const url = whatsappUrl(beautyBusiness.whatsappNumber, formatEnquiry(enquiry));
     expect(url).not.toContain(' ');
     expect(url).toContain(encodeURIComponent('Preferred date: 2026-11-20'));
-    expect(decodeURIComponent(url!.split('?text=')[1] ?? '')).toContain('Locality / address: Borananda, Hyderabad');
+    expect(decodeURIComponent((url ?? '').split('?text=')[1] ?? '')).toContain('Locality / address: Borananda, Hyderabad');
   });
 });
 
