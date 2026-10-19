@@ -33,19 +33,19 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           {navigation.map(item => <Link key={item.to} to={item.to} activeOptions={{ exact: true }} activeProps={{ className: 'nav-active' }}>{item.label}</Link>)}
         </nav>
         <div className="header-actions">
-          <Button asChild className="header-book"><Link to="/book">Book now <ArrowUpRight /></Link></Button>
+          <Button asChild className="header-book"><Link to="/book" search={{ service: '' }}>Book now <ArrowUpRight /></Link></Button>
           <Button size="icon" variant="ghost" className="mobile-menu" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(open => !open)}>{menuOpen ? <X /> : <Menu />}</Button>
         </div>
       </div>
       {menuOpen && <nav id="mobile-navigation" aria-label="Mobile navigation" className="mobile-nav">
         {navigation.map(item => <Link key={item.to} to={item.to} activeOptions={{ exact: true }} activeProps={{ className: 'nav-active' }} onClick={() => setMenuOpen(false)}>{item.label}<ArrowUpRight size={16} /></Link>)}
-        <Link to="/book" onClick={() => setMenuOpen(false)}>Book appointment<ArrowUpRight size={16} /></Link>
+        <Link to="/book" search={{ service: '' }} onClick={() => setMenuOpen(false)}>Book appointment<ArrowUpRight size={16} /></Link>
       </nav>}
     </header>
     <main id="main">{children}</main>
     <footer className="site-footer">
       <div className="container footer-top"><Brand footer /><p>Beauty at home.<br />A little time for yourself.</p>
-        <nav aria-label="Footer navigation">{[...navigation.slice(1), { label: 'Book appointment', to: '/book' as const }].map(item => <Link key={item.to} to={item.to}>{item.label}</Link>)}</nav>
+        <nav aria-label="Footer navigation">{navigation.slice(1).map(item => <Link key={item.to} to={item.to}>{item.label}</Link>)}<Link to="/book" search={{ service: '' }}>Book appointment</Link></nav>
       </div>
       <div className="container footer-bottom"><p>© {new Date().getUTCFullYear()} Queen’s Beauty Parlour.</p><span>Made with a little care <Heart size={12} /></span></div>
     </footer>
