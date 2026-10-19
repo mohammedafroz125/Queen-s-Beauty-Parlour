@@ -6,7 +6,7 @@ import { PageHeading } from '@/components/beauty/presentation';
 import { getServiceFromSearch } from '@/lib/beauty';
 
 export const Route = createFileRoute('/book')({
-  validateSearch: (search: Record<string, unknown>) => ({ service: getServiceFromSearch(search.service) }),
+  validateSearch: (search: Record<string, unknown>) => ({ service: getServiceFromSearch(search['service']) }),
   head: () => ({ meta: [
     { title: 'Book an Appointment Enquiry | Queen’s Beauty Parlour' },
     { name: 'description', content: 'Prepare an at-home beauty service enquiry for Queen’s Beauty Parlour and send it through WhatsApp.' },

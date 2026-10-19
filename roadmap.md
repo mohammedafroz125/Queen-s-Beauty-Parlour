@@ -3,7 +3,7 @@
 - [x] Add enquiry draft, service selection, FAQ and mobile navigation.
 - [x] Verify the enquiry flow and layout; leave all integrations disconnected.
 - [x] Connect the enquiry flow to the business WhatsApp (+91 89196 69857) with a prefilled, URL-encoded message; verified on desktop and mobile.
-- [ ] Finish and verify the service catalogue, hours, and WhatsApp enquiry flow.
-- [ ] Convert homepage section navigation into the requested seven-page website with shared navigation and footer.
-- [ ] Build Services, Makeup Looks, Gallery, About, Book, and Contact pages using the existing visual system and distinct inspiration imagery.
+- [x] Finish and verify the service catalogue, hours, and WhatsApp enquiry flow.
+- [x] Convert homepage section navigation into the requested seven-page website with shared navigation and footer.
+- [x] Build Services, Makeup Looks, Gallery, About, Book, and Contact pages using the existing visual system and distinct inspiration imagery.
 - [ ] Verify direct routes, navigation, preselected booking, responsive layout, imagery, tests, and preview errors.

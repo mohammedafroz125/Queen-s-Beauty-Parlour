@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { beautyBusiness, formatEnquiry, getServiceFromSearch, phonePattern, serviceCategories, serviceNames, whatsappUrl } from '@/lib/beauty';
+import { galleryImages, makeupLooks, servicePresentation } from '@/lib/beauty-presentation';
 
 const enquiry = { service: 'Hair Straightening', name: 'Test Guest', phone: '9000000000', date: '2026-11-20', time: '10:30', address: 'Borananda, Hyderabad', notes: 'A soft updo' };
 
@@ -21,6 +22,11 @@ describe('Beauty enquiry boundaries', () => {
     expect(getServiceFromSearch('Hair Straightening')).toBe('Hair Straightening');
     expect(getServiceFromSearch('Natural makeup')).toBe('');
     expect(getServiceFromSearch(undefined)).toBe('');
+  });
+  it('keeps every listed service bookable and uses distinct inspiration images', () => {
+    expect(servicePresentation.map(item => item.name)).toEqual(serviceNames);
+    const imageSources = [...servicePresentation, ...makeupLooks, ...galleryImages].map(item => item.image);
+    expect(new Set(imageSources).size).toBe(imageSources.length);
   });
   it('sends enquiries to the confirmed business WhatsApp number', () => {
     expect(whatsappUrl(beautyBusiness.whatsappNumber, 'Enquiry')).toBe('https://wa.me/918919669857?text=Enquiry');
