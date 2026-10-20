@@ -82,7 +82,7 @@ async function isAllowedGitHubUser(token) {
   return typeof user.login === 'string' && user.login.toLowerCase() === allowedUser;
 }
 
-export default async function handler(request) {
+async function handleRequest(request) {
   try {
     const config = getConfig();
     const requestUrl = new URL(request.url);
@@ -128,4 +128,24 @@ export default async function handler(request) {
     console.error('Decap OAuth error', error);
     return errorResponse('OAuth authentication is unavailable. Check the server configuration.', 503);
   }
+}
+
+export default async function handler(req, res) {
+  if (req instanceof Request) return handleRequest(req);
+
+  const protocol = req.headers['x-forwarded-proto'] || 'https';
+  const host = req.headers.host || 'queensbeauty.vercel.app';
+  const request = new Request(`${protocol}://${host}${req.url || callbackPath}`, {
+    method: req.method || 'GET',
+    headers: Object.entries(req.headers).reduce((headers, [name, value]) => {
+      if (typeof value === 'string') headers.set(name, value);
+      else if (Array.isArray(value)) headers.set(name, value.join(', '));
+      return headers;
+    }, new Headers()),
+  });
+
+  const response = await handleRequest(request);
+  res.statusCode = response.status;
+  response.headers.forEach((value, key) => res.setHeader(key, value));
+  res.end(await response.text());
 }
