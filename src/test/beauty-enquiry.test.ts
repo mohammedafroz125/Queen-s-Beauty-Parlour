@@ -29,7 +29,7 @@ describe('Beauty enquiry boundaries', () => {
     expect(new Set(imageSources).size).toBe(imageSources.length);
   });
   it('sends enquiries to the confirmed business WhatsApp number', () => {
-    expect(whatsappUrl(beautyBusiness.whatsappNumber, 'Enquiry')).toBe('https://wa.me/918919669857?text=Enquiry');
+    expect(whatsappUrl(beautyBusiness.whatsappNumber, 'Enquiry')).toBe('https://wa.me/918919669847?text=Enquiry');
   });
   it('does not create a WhatsApp destination for an unconfirmed number', () => {
     expect(whatsappUrl('', 'Enquiry')).toBeNull();

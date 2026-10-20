@@ -1,8 +1,8 @@
-// Confirmed business WhatsApp: +91 89196 69857 → https://wa.me/918919669857
+// Confirmed business WhatsApp: +91 89196 69847 → https://wa.me/918919669847
 export const beautyBusiness = {
   name: 'Queen’s Beauty Parlour',
   location: 'Borananda, Hyderabad',
-  whatsappNumber: '+91 89196 69857',
+  whatsappNumber: '+91 89196 69847',
   businessHours: '5:00 PM–11:00 PM',
   phone: '',
 };
