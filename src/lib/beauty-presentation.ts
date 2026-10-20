@@ -25,7 +25,7 @@ import galleryFive from '@/assets/gallery-5.webp';
 import gallerySix from '@/assets/gallery-6.webp';
 
 export const servicePresentation = [
-  { name: 'Makeup', category: 'Makeup', text: 'A makeup look to discuss and shape around your occasion.', image: lookOne },
+  { name: 'Bridal Makeup', category: 'Makeup', text: 'A bridal makeup look to discuss and shape around your occasion.', image: lookOne },
   { name: 'Hair Straightening', category: 'Hair Services', text: 'A straight hairstyle reference for your enquiry.', image: hairOne },
   { name: 'Hair Curls', category: 'Hair Services', text: 'A curled hairstyle reference for your enquiry.', image: hairTwo },
   { name: 'Baby Haircut', category: 'Hair Services', text: 'A short haircut reference to discuss when enquiring.', image: hairThree },

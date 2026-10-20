@@ -7,7 +7,7 @@ export const beautyBusiness = {
   phone: '',
 };
 export const serviceCategories = [
-  { name: 'Makeup', services: ['Makeup'] },
+  { name: 'Makeup', services: ['Bridal Makeup'] },
   { name: 'Hair Services', services: ['Hair Straightening', 'Hair Curls', 'Baby Haircut', 'V-Cut', 'U-Cut', 'Feather Cut'] },
   { name: 'Facial & Skin Care', services: ['Diamond Facial', 'Gold Facial', 'D-Tan'] },
   { name: 'Threading', services: ['Eyebrow Threading', 'Upper Lip Threading'] },

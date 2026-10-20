@@ -7,7 +7,7 @@ const enquiry = { service: 'Hair Straightening', name: 'Test Guest', phone: '900
 describe('Beauty enquiry boundaries', () => {
   it('keeps exactly the requested service catalogue and category groupings', () => {
     expect(serviceCategories).toEqual([
-      { name: 'Makeup', services: ['Makeup'] },
+      { name: 'Makeup', services: ['Bridal Makeup'] },
       { name: 'Hair Services', services: ['Hair Straightening', 'Hair Curls', 'Baby Haircut', 'V-Cut', 'U-Cut', 'Feather Cut'] },
       { name: 'Facial & Skin Care', services: ['Diamond Facial', 'Gold Facial', 'D-Tan'] },
       { name: 'Threading', services: ['Eyebrow Threading', 'Upper Lip Threading'] },

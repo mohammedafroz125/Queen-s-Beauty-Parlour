@@ -16,8 +16,8 @@ export const Route = createFileRoute('/makeup-looks')({
 });
 
 function MakeupLooksPage() {
-  return <section className="page-content section-space"><div className="container"><PageHeading eyebrow="MAKEUP INSPIRATION" title="A look that feels like you." text="Explore visual references for different makeup moods. These style categories are inspiration only; Makeup is the listed service." />
+  return <section className="page-content section-space"><div className="container"><PageHeading eyebrow="MAKEUP INSPIRATION" title="A look that feels like you." text="Explore visual references for different makeup moods. These style categories are inspiration only; Bridal Makeup is the listed service." />
     <div className="inspiration-grid">{makeupLooks.map(item => <InspirationCard key={item.name} {...item} />)}</div>
-    <div className="page-cta"><p>Have a look in mind? Share it when you enquire about Makeup.</p><Button asChild className="main-button"><Link to="/book" search={{ service: 'Makeup' }}>Enquire about Makeup <ArrowUpRight /></Link></Button></div>
+    <div className="page-cta"><p>Have a look in mind? Share it when you enquire about Bridal Makeup.</p><Button asChild className="main-button"><Link to="/book" search={{ service: 'Bridal Makeup' }}>Enquire about Bridal Makeup <ArrowUpRight /></Link></Button></div>
   </div></section>;
 }
