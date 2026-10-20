@@ -1,0 +1,11 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:20128",
+    "ANTHROPIC_AUTH_TOKEN": "sk-fa8c756e41a085de-5c30e5-777a4e17",
+    "ANTHROPIC_MODEL": "Mycombo",
+    "DISABLE_AUTOUPDATER": "1",
+    "SN_BASE_URL": "https://token.sensenova.ai/v1",
+    "SN_API_KEY": "sk-CTAEvvB9l4IegqRiPDfvsusGsplXT2sK",
+    "SN_CHAT_MODEL": "sensenova-6.8-flash-lite"
+  }
+}
