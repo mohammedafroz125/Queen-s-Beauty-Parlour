@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import { Link, useLocation } from '@tanstack/react-router';
-import { ArrowUpRight, Crown, Heart, Menu, MessageCircle, X } from 'lucide-react';
+import { ArrowUpRight, Crown, Heart, Instagram, Menu, MessageCircle, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { beautyBusiness, whatsappUrl } from '@/lib/beauty';
 
@@ -58,7 +58,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <div className="container footer-top"><Brand footer /><p>Beauty at home.<br />A little time for yourself.</p>
         <nav aria-label="Footer navigation">{navigation.slice(1).map(item => <Link key={item.to} to={item.to}>{item.label}</Link>)}<Link to="/book" search={{ service: '' }}>Book appointment</Link></nav>
       </div>
-      <div className="container footer-bottom"><p>© {new Date().getUTCFullYear()} Queen’s Beauty Parlour.</p><span>Made with a little care <Heart size={12} /></span></div>
+      <div className="container footer-bottom"><p>© {new Date().getUTCFullYear()} Queen’s Beauty Parlour.</p><span>Made with a little care <Heart size={12} /></span><a className="footer-signature" href="https://www.instagram.com/itsafrozmirza/" target="_blank" rel="noopener noreferrer"><Instagram size={13} aria-hidden="true" /><span>Crafted by itsafrozmirza</span></a></div>
     </footer>
     {whatsapp && <Button asChild className="floating-whatsapp" size="icon" aria-label="WhatsApp enquiry" title="WhatsApp enquiry"><a href={whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle /></a></Button>}
   </>;
