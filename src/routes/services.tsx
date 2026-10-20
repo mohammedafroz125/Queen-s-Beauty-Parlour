@@ -2,15 +2,14 @@ import { createFileRoute } from '@tanstack/react-router';
 import { PageHeading, ServiceCard } from '@/components/beauty/presentation';
 import { servicePresentation } from '@/lib/beauty-presentation';
 import { serviceCategories } from '@/lib/beauty';
+import { pageHead } from '@/lib/seo';
 
 export const Route = createFileRoute('/services')({
-  head: () => ({ meta: [
-    { title: 'Beauty Services | Queen’s Beauty Parlour' },
-    { name: 'description', content: 'Browse the makeup, hair, skincare, threading and waxing enquiry options from Queen’s Beauty Parlour.' },
-    { property: 'og:title', content: 'Beauty Services | Queen’s Beauty Parlour' },
-    { property: 'og:description', content: 'Browse Queen’s Beauty Parlour’s beauty services and prepare an enquiry.' },
-    { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
-  ] }),
+  head: () => pageHead({
+    title: 'Beauty Services in Borananda | Queen’s Beauty Parlour',
+    description: 'Browse Bridal Makeup, hair services, facial care, threading and waxing from Queen’s Beauty Parlour in Borananda, Hyderabad.',
+    path: '/services',
+  }),
   component: ServicesPage,
 });
 

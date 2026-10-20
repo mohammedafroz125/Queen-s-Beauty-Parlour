@@ -4,16 +4,15 @@ import { CalendarDays, Flower2 } from 'lucide-react';
 import { BookingForm } from '@/components/beauty/booking-form';
 import { PageHeading } from '@/components/beauty/presentation';
 import { getServiceFromSearch } from '@/lib/beauty';
+import { pageHead } from '@/lib/seo';
 
 export const Route = createFileRoute('/book')({
   validateSearch: (search: Record<string, unknown>) => ({ service: getServiceFromSearch(search['service']) }),
-  head: () => ({ meta: [
-    { title: 'Book an Appointment Enquiry | Queen’s Beauty Parlour' },
-    { name: 'description', content: 'Prepare an at-home beauty service enquiry for Queen’s Beauty Parlour and send it through WhatsApp.' },
-    { property: 'og:title', content: 'Book an Appointment Enquiry | Queen’s Beauty Parlour' },
-    { property: 'og:description', content: 'Prepare an enquiry draft and review it before sending through WhatsApp.' },
-    { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
-  ] }),
+  head: () => pageHead({
+    title: 'Send a Beauty Enquiry | Queen’s Beauty Parlour',
+    description: 'Choose a beauty service, share your preferences and send an appointment enquiry to Queen’s Beauty Parlour through WhatsApp.',
+    path: '/book',
+  }),
   component: BookPage,
 });
 

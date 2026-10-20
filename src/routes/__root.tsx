@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import { SiteLayout } from "@/components/beauty/site-layout";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { beautySalonStructuredData } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -80,10 +81,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Queen’s Beauty Parlour" },
-      { name: "description", content: "At-home beauty services in the Borananda / Hyderabad area." },
+      { name: "description", content: "At-home beauty services from Queen’s Beauty Parlour in Borananda, Hyderabad." },
       { name: "author", content: "Queen’s Beauty Parlour" },
       { property: "og:title", content: "Queen’s Beauty Parlour" },
-      { property: "og:description", content: "At-home beauty services in the Borananda / Hyderabad area." },
+      { property: "og:description", content: "At-home beauty services from Queen’s Beauty Parlour in Borananda, Hyderabad." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -107,6 +108,10 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(beautySalonStructuredData) }}
+        />
       </head>
       <body>
         {children}

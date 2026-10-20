@@ -6,21 +6,20 @@ import { SectionHeading, ServiceCard, InspirationCard } from '@/components/beaut
 import { beautyBusiness } from '@/lib/beauty';
 import { galleryImages, makeupLooks, servicePresentation } from '@/lib/beauty-presentation';
 import hero from '@/assets/beauty-hero.jpg';
+import { pageHead } from '@/lib/seo';
 
 export const Route = createFileRoute('/')({
-  head: () => ({ meta: [
-    { title: 'Queen’s Beauty Parlour | At-home beauty in Hyderabad' },
-    { name: 'description', content: 'Explore makeup, hairstyling and beauty care with Queen’s Beauty Parlour in Borananda, Hyderabad. Prepare an appointment enquiry.' },
-    { property: 'og:title', content: 'Queen’s Beauty Parlour — A little beauty, just for you' },
-    { property: 'og:description', content: 'Explore at-home beauty services and prepare an appointment enquiry with Queen’s Beauty Parlour.' },
-    { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
-  ] }),
+  head: () => pageHead({
+    title: 'Queen’s Beauty Parlour | At-home beauty in Borananda, Hyderabad',
+    description: 'Explore Bridal Makeup, hair services and beauty care from Queen’s Beauty Parlour in Borananda, Hyderabad. Send an appointment enquiry on WhatsApp.',
+    path: '/',
+  }),
   component: HomePage,
 });
 
 const faqs = [
-  ['How do I enquire about an appointment?', 'Choose a service and fill in your preferred date, time and address. Prepare your enquiry, review it, then send it through WhatsApp. Your appointment is confirmed only after the business replies.'],
-  ['Is my appointment confirmed when I fill in the form?', 'No. The form prepares an enquiry draft only; it does not send or save your details. An appointment is confirmed only after you speak with the business and agree on availability and service details.'],
+  ['How do I enquire about an appointment?', 'Choose a service and fill in your preferred date, time and address. Review your details, then send the enquiry through WhatsApp. Your appointment is confirmed only after the business replies.'],
+  ['Is my appointment confirmed when I fill in the form?', 'No. The form sends an enquiry through WhatsApp, but it does not confirm an appointment. An appointment is confirmed only after you speak with the business and agree on availability and service details.'],
   ['How much do the services cost?', 'Prices have not been published. Please discuss your chosen service and requirements with the business before agreeing to an appointment.'],
 ];
 

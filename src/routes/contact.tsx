@@ -3,15 +3,14 @@ import { ArrowUpRight, Clock3, MapPin, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageHeading } from '@/components/beauty/presentation';
 import { beautyBusiness, whatsappUrl } from '@/lib/beauty';
+import { pageHead } from '@/lib/seo';
 
 export const Route = createFileRoute('/contact')({
-  head: () => ({ meta: [
-    { title: 'Contact & Business Hours | Queen’s Beauty Parlour' },
-    { name: 'description', content: 'Contact Queen’s Beauty Parlour on WhatsApp and view the confirmed business hours.' },
-    { property: 'og:title', content: 'Contact Queen’s Beauty Parlour' },
-    { property: 'og:description', content: 'Start a WhatsApp enquiry and view the business hours for Queen’s Beauty Parlour.' },
-    { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
-  ] }),
+  head: () => pageHead({
+    title: 'Contact Queen’s Beauty Parlour | Borananda, Hyderabad',
+    description: 'Contact Queen’s Beauty Parlour on WhatsApp, view confirmed hours and find the Borananda, Hyderabad location label.',
+    path: '/contact',
+  }),
   component: ContactPage,
 });
 

@@ -1,15 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { PageHeading } from '@/components/beauty/presentation';
 import { galleryImages } from '@/lib/beauty-presentation';
+import { pageHead } from '@/lib/seo';
 
 export const Route = createFileRoute('/gallery')({
-  head: () => ({ meta: [
-    { title: 'Beauty Inspiration Gallery | Queen’s Beauty Parlour' },
-    { name: 'description', content: 'A curated moodboard of temporary beauty inspiration images for Queen’s Beauty Parlour.' },
-    { property: 'og:title', content: 'Beauty Inspiration Gallery | Queen’s Beauty Parlour' },
-    { property: 'og:description', content: 'Explore illustrative beauty inspiration. Images are not client work or a portfolio.' },
-    { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
-  ] }),
+  head: () => pageHead({
+    title: 'Beauty Inspiration Gallery | Queen’s Beauty Parlour',
+    description: 'Browse illustrative beauty inspiration for makeup and styling. These images are moodboard references, not client work.',
+    path: '/gallery',
+  }),
   component: GalleryPage,
 });
 

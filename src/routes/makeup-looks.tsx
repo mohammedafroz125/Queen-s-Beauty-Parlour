@@ -3,15 +3,14 @@ import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageHeading, InspirationCard } from '@/components/beauty/presentation';
 import { makeupLooks } from '@/lib/beauty-presentation';
+import { pageHead } from '@/lib/seo';
 
 export const Route = createFileRoute('/makeup-looks')({
-  head: () => ({ meta: [
-    { title: 'Makeup Looks & Inspiration | Queen’s Beauty Parlour' },
-    { name: 'description', content: 'Explore natural, soft glam, party, bridal, traditional and evening makeup inspiration.' },
-    { property: 'og:title', content: 'Makeup Looks & Inspiration | Queen’s Beauty Parlour' },
-    { property: 'og:description', content: 'Illustrative makeup references to help describe the look you have in mind.' },
-    { property: 'og:type', content: 'website' }, { name: 'twitter:card', content: 'summary_large_image' },
-  ] }),
+  head: () => pageHead({
+    title: 'Bridal Makeup Looks & Inspiration | Queen’s Beauty Parlour',
+    description: 'Explore illustrative natural, soft glam, party, bridal and evening makeup references before enquiring about Bridal Makeup in Borananda, Hyderabad.',
+    path: '/makeup-looks',
+  }),
   component: MakeupLooksPage,
 });
 
