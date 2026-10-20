@@ -37,7 +37,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
   return <>
     <a href="#main" className="skip-link">Skip to content</a>
-    <header className={`site-header ${isHome ? 'site-header-home' : ''} ${isHome && isScrolled ? 'site-header-scrolled' : ''}`}>
+    <header className={`site-header ${isHome ? 'site-header-home' : ''} ${isHome && isScrolled ? 'site-header-scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
       <div className="header-inner">
         <Brand />
         <nav aria-label="Main navigation" className="desktop-nav">
