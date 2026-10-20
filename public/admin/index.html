@@ -6,6 +6,12 @@
     <title>Queen’s Beauty Parlour Admin</title>
   </head>
   <body>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
     <script src="https://unpkg.com/decap-cms@^3.8.0/dist/decap-cms.js"></script>
+    <script>
+      window.CMS.init({ config: "/admin/config.yml" });
+    </script>
   </body>
 </html>
