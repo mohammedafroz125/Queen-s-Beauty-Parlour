@@ -3,6 +3,8 @@ backend:
   repo: mohammedafroz125/queens-beauty-booking
   branch: main
   squash_merges: true
+  base_url: https://queensbeauty.vercel.app/api
+  auth_endpoint: auth
 
 site_url: https://queensbeauty.vercel.app
 display_url: https://queensbeauty.vercel.app
