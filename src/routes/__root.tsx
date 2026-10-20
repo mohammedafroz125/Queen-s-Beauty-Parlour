@@ -14,6 +14,7 @@ import { SiteLayout } from "@/components/beauty/site-layout";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { beautySalonStructuredData } from "../lib/seo";
+import { content } from "../lib/beauty";
 
 function NotFoundComponent() {
   return (
@@ -80,11 +81,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Queen’s Beauty Parlour" },
-      { name: "description", content: "At-home beauty services from Queen’s Beauty Parlour in Borananda, Hyderabad." },
+      { title: content.seo.siteTitle },
+      { name: "description", content: content.seo.siteDescription },
       { name: "author", content: "Queen’s Beauty Parlour" },
-      { property: "og:title", content: "Queen’s Beauty Parlour" },
-      { property: "og:description", content: "At-home beauty services from Queen’s Beauty Parlour in Borananda, Hyderabad." },
+      { property: "og:title", content: content.seo.siteTitle },
+      { property: "og:description", content: content.seo.siteDescription },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

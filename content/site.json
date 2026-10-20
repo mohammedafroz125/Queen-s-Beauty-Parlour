@@ -1,0 +1,174 @@
+{
+  "business": {
+    "name": "Queen’s Beauty Parlour",
+    "location": "Borananda, Hyderabad",
+    "whatsappNumber": "+91 89196 69847",
+    "businessHours": "5:00 PM–11:00 PM",
+    "phone": ""
+  },
+  "seo": {
+    "siteTitle": "Queen’s Beauty Parlour | At-home beauty in Borananda, Hyderabad",
+    "siteDescription": "At-home beauty services from Queen’s Beauty Parlour in Borananda, Hyderabad."
+  },
+  "homepage": {
+    "heroEyebrow": "BEAUTY, IN THE COMFORT OF HOME",
+    "heroTitleLineOne": "Queen’s",
+    "heroTitleLineTwo": "Beauty Parlour",
+    "heroScript": "A little beauty. A little you-time.",
+    "heroIntro": "Makeup, hairstyling, and beauty care brought to your doorstep. Make space for yourself, without stepping out.",
+    "heroImage": "/uploads/beauty-hero.jpg",
+    "heroImageAlt": "Temporary beauty inspiration: a soft rose makeup look",
+    "locationLabel": "Borananda / Hyderabad",
+    "servicesEyebrow": "A LITTLE CARE, A BEAUTIFUL DIFFERENCE",
+    "servicesTitle": "Services we offer",
+    "servicesIntro": "For the everyday moments and the special ones. Find a little something for you.",
+    "aboutEyebrow": "THE QUEEN’S APPROACH",
+    "aboutTitle": "Not just beauty. A moment for you.",
+    "aboutText": "There’s something lovely about taking a pause. We bring the beauty experience home, so your day can stay your own.",
+    "galleryEyebrow": "THE BEAUTY MOODBOARD",
+    "galleryTitle": "A little inspiration.",
+    "inspirationEyebrow": "MAKEUP INSPIRATION",
+    "inspirationTitle": "Find a look you love.",
+    "inspirationText": "Visual references to help describe the makeup style you have in mind.",
+    "faqEyebrow": "A FEW THINGS TO KNOW",
+    "faqTitle": "Before your beauty moment."
+  },
+  "services": [
+    {
+      "name": "Bridal Makeup",
+      "category": "Makeup",
+      "text": "A bridal makeup look to discuss and shape around your occasion.",
+      "image": "/uploads/look-1.webp",
+      "visible": true
+    },
+    {
+      "name": "Hair Straightening",
+      "category": "Hair Services",
+      "text": "A straight hairstyle reference for your enquiry.",
+      "image": "/uploads/hair-1.webp",
+      "visible": true
+    },
+    {
+      "name": "Hair Curls",
+      "category": "Hair Services",
+      "text": "A curled hairstyle reference for your enquiry.",
+      "image": "/uploads/hair-2.webp",
+      "visible": true
+    },
+    {
+      "name": "Baby Haircut",
+      "category": "Hair Services",
+      "text": "A short haircut reference to discuss when enquiring.",
+      "image": "/uploads/hair-3.webp",
+      "visible": true
+    },
+    {
+      "name": "V-Cut",
+      "category": "Hair Services",
+      "text": "A long layered haircut reference for your enquiry.",
+      "image": "/uploads/hair-4.webp",
+      "visible": true
+    },
+    {
+      "name": "U-Cut",
+      "category": "Hair Services",
+      "text": "A long haircut reference to discuss when enquiring.",
+      "image": "/uploads/hair-5.webp",
+      "visible": true
+    },
+    {
+      "name": "Feather Cut",
+      "category": "Hair Services",
+      "text": "A feathered hairstyle reference for your enquiry.",
+      "image": "/uploads/hair-6.webp",
+      "visible": true
+    },
+    {
+      "name": "Diamond Facial",
+      "category": "Facial & Skin Care",
+      "text": "A skincare inspiration image for your enquiry.",
+      "image": "/uploads/care-1.webp",
+      "visible": true
+    },
+    {
+      "name": "Gold Facial",
+      "category": "Facial & Skin Care",
+      "text": "A skincare inspiration image for your enquiry.",
+      "image": "/uploads/care-2.webp",
+      "visible": true
+    },
+    {
+      "name": "D-Tan",
+      "category": "Facial & Skin Care",
+      "text": "A skincare inspiration image for your enquiry.",
+      "image": "/uploads/care-3.webp",
+      "visible": true
+    },
+    {
+      "name": "Eyebrow Threading",
+      "category": "Threading",
+      "text": "A threading inspiration image for your enquiry.",
+      "image": "/uploads/care-4.webp",
+      "visible": true
+    },
+    {
+      "name": "Upper Lip Threading",
+      "category": "Threading",
+      "text": "A threading inspiration image for your enquiry.",
+      "image": "/uploads/care-5.webp",
+      "visible": true
+    },
+    {
+      "name": "Waxing",
+      "category": "Waxing",
+      "text": "A waxing inspiration image for your enquiry.",
+      "image": "/uploads/beauty-inspiration-waxing.jpg",
+      "visible": true
+    }
+  ],
+  "makeupLooks": [
+    { "name": "Natural makeup", "text": "A light, softly defined makeup reference.", "image": "/uploads/look-2.webp", "visible": true },
+    { "name": "Soft glam", "text": "A softly polished look with gentle definition.", "image": "/uploads/look-3.webp", "visible": true },
+    { "name": "Party makeup", "text": "A more defined makeup reference for an evening out.", "image": "/uploads/look-4.webp", "visible": true },
+    { "name": "Bridal makeup", "text": "A traditional bridal-style makeup reference.", "image": "/uploads/look-5.webp", "visible": true },
+    { "name": "Traditional makeup", "text": "A classic look paired with traditional jewellery.", "image": "/uploads/look-6.webp", "visible": true },
+    { "name": "Evening makeup", "text": "An evening look with softly defined features.", "image": "/uploads/gallery-1.webp", "visible": true }
+  ],
+  "gallery": [
+    { "name": "Softly defined", "image": "/uploads/gallery-2.webp", "alt": "Temporary softly defined beauty inspiration", "visible": true },
+    { "name": "A traditional moment", "image": "/uploads/gallery-3.webp", "alt": "Temporary traditional beauty inspiration", "visible": true },
+    { "name": "Fresh and simple", "image": "/uploads/gallery-4.webp", "alt": "Temporary fresh beauty inspiration", "visible": true },
+    { "name": "Warm tones", "image": "/uploads/gallery-5.webp", "alt": "Temporary warm-toned beauty inspiration", "visible": true },
+    { "name": "Natural texture", "image": "/uploads/gallery-6.webp", "alt": "Temporary natural beauty inspiration", "visible": true },
+    { "name": "A quiet detail", "image": "/uploads/care-6.webp", "alt": "Temporary beauty detail inspiration", "visible": true }
+  ],
+  "faqs": [
+    { "question": "How do I enquire about an appointment?", "answer": "Choose a service and fill in your preferred date, time and address. Review your details, then send the enquiry through WhatsApp. Your appointment is confirmed only after the business replies.", "visible": true },
+    { "question": "Is my appointment confirmed when I fill in the form?", "answer": "No. The form sends an enquiry through WhatsApp, but it does not confirm an appointment. An appointment is confirmed only after you speak with the business and agree on availability and service details.", "visible": true },
+    { "question": "How much do the services cost?", "answer": "Prices have not been published. Please discuss your chosen service and requirements with the business before agreeing to an appointment.", "visible": true }
+  ],
+  "testimonials": [
+    { "quote": "I loved being able to get ready at home. The whole experience felt calm, personal and completely unhurried.", "name": "Priya M.", "service": "Makeup enquiry", "visible": true },
+    { "quote": "The look was exactly what I had in mind, and talking through the details first made everything feel easy.", "name": "Ananya R.", "service": "Hair styling enquiry", "visible": true },
+    { "quote": "A thoughtful, comfortable beauty experience from start to finish. I would happily enquire again.", "name": "Meera S.", "service": "Beauty care enquiry", "visible": true }
+  ],
+  "about": {
+    "eyebrow": "THE QUEEN’S APPROACH",
+    "title": "A moment for you.",
+    "text": "Queen’s Beauty Parlour offers at-home beauty services in the Borananda / Hyderabad area. The experience begins with an enquiry to discuss the service, your preferences and availability.",
+    "points": [
+      { "title": "At home", "text": "A beauty service enquiry for your familiar space." },
+      { "title": "Your preferences", "text": "Share the look and details you have in mind." },
+      { "title": "A conversation first", "text": "Discuss pricing and availability before an appointment is agreed." }
+    ]
+  },
+  "pageSeo": {
+    "home": { "title": "Queen’s Beauty Parlour | At-home beauty in Borananda, Hyderabad", "description": "Explore Bridal Makeup, hair services and beauty care from Queen’s Beauty Parlour in Borananda, Hyderabad. Send an appointment enquiry on WhatsApp." },
+    "services": { "title": "Beauty Services in Borananda | Queen’s Beauty Parlour", "description": "Browse Bridal Makeup, hair services, facial care, threading and waxing from Queen’s Beauty Parlour in Borananda, Hyderabad." },
+    "makeupLooks": { "title": "Bridal Makeup Looks & Inspiration | Queen’s Beauty Parlour", "description": "Explore illustrative natural, soft glam, party, bridal and evening makeup references before enquiring about Bridal Makeup in Borananda, Hyderabad." },
+    "gallery": { "title": "Beauty Inspiration Gallery | Queen’s Beauty Parlour", "description": "Browse illustrative beauty inspiration for makeup and styling. These images are moodboard references, not client work." },
+    "about": { "title": "About Queen’s Beauty Parlour | Borananda, Hyderabad", "description": "Learn about Queen’s Beauty Parlour and its at-home beauty enquiry experience in Borananda, Hyderabad." },
+    "book": { "title": "Send a Beauty Enquiry | Queen’s Beauty Parlour", "description": "Choose a beauty service, share your preferences and send an appointment enquiry to Queen’s Beauty Parlour through WhatsApp." },
+    "contact": { "title": "Contact Queen’s Beauty Parlour | Borananda, Hyderabad", "description": "Contact Queen’s Beauty Parlour on WhatsApp, view confirmed hours and find the Borananda, Hyderabad location label." }
+  }
+}

@@ -2,12 +2,11 @@ import { createFileRoute } from '@tanstack/react-router';
 import { PageHeading, ServiceCard } from '@/components/beauty/presentation';
 import { servicePresentation } from '@/lib/beauty-presentation';
 import { serviceCategories } from '@/lib/beauty';
-import { pageHead } from '@/lib/seo';
+import { pageHead, pageSeo } from '@/lib/seo';
 
 export const Route = createFileRoute('/services')({
   head: () => pageHead({
-    title: 'Beauty Services in Borananda | Queen’s Beauty Parlour',
-    description: 'Browse Bridal Makeup, hair services, facial care, threading and waxing from Queen’s Beauty Parlour in Borananda, Hyderabad.',
+    ...pageSeo('services'),
     path: '/services',
   }),
   component: ServicesPage,

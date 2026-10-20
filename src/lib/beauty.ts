@@ -1,28 +1,32 @@
-// Confirmed business WhatsApp: +91 89196 69847 → https://wa.me/918919669847
-export const beautyBusiness = {
-  name: 'Queen’s Beauty Parlour',
-  location: 'Borananda, Hyderabad',
-  whatsappNumber: '+91 89196 69847',
-  businessHours: '5:00 PM–11:00 PM',
-  phone: '',
-};
-export const serviceCategories = [
-  { name: 'Makeup', services: ['Bridal Makeup'] },
-  { name: 'Hair Services', services: ['Hair Straightening', 'Hair Curls', 'Baby Haircut', 'V-Cut', 'U-Cut', 'Feather Cut'] },
-  { name: 'Facial & Skin Care', services: ['Diamond Facial', 'Gold Facial', 'D-Tan'] },
-  { name: 'Threading', services: ['Eyebrow Threading', 'Upper Lip Threading'] },
-  { name: 'Waxing', services: ['Waxing'] },
-] as const;
-export const serviceNames = serviceCategories.flatMap(category => category.services);
+import siteContent from '../../content/site.json';
+
+export const content = siteContent;
+export const beautyBusiness = content.business;
+
+export const serviceCategories = Array.from(
+  content.services.reduce((categories, service) => {
+    if (!service.visible) return categories;
+    const existing = categories.get(service.category) ?? [];
+    existing.push(service.name);
+    categories.set(service.category, existing);
+    return categories;
+  }, new Map<string, string[]>()),
+  ([name, services]) => ({ name, services }),
+);
+
+export const serviceNames = serviceCategories.flatMap((category) => category.services);
+
 export function getServiceFromSearch(value: unknown): string {
-  return typeof value === 'string' && (serviceNames as readonly string[]).includes(value) ? value : '';
+  return typeof value === 'string' && serviceNames.includes(value) ? value : '';
 }
-// Must compile as a JS regex with the 'v' flag: browsers drop an invalid pattern silently, which stops the field validating at all.
+
 export const phonePattern = "(?=(\\D*\\d){7})[\\d\\s\\(\\)\\+\\.\\-]{7,20}";
 export type Enquiry = { service: string; name: string; phone: string; date: string; time: string; address: string; notes: string };
+
 export function formatEnquiry(data: Enquiry) {
   return `Hello Queen’s Beauty Parlour, I would like to enquire about an at-home appointment.\n\nService: ${data.service}\nName: ${data.name}\nPhone: ${data.phone}\nPreferred date: ${data.date}\nPreferred time: ${data.time}\nLocality / address: ${data.address}${data.notes ? `\nNotes: ${data.notes}` : ''}\n\nPlease let me know availability and pricing. This is an enquiry, not a confirmed booking.`;
 }
+
 export function whatsappUrl(number: string, message: string): string | null {
   const digits = number.replace(/[\s+()-]/g, '');
   if (!/^\d{8,15}$/.test(digits)) return null;

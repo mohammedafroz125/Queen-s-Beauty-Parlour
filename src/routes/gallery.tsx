@@ -1,12 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { PageHeading } from '@/components/beauty/presentation';
 import { galleryImages } from '@/lib/beauty-presentation';
-import { pageHead } from '@/lib/seo';
+import { pageHead, pageSeo } from '@/lib/seo';
 
 export const Route = createFileRoute('/gallery')({
   head: () => pageHead({
-    title: 'Beauty Inspiration Gallery | Queen’s Beauty Parlour',
-    description: 'Browse illustrative beauty inspiration for makeup and styling. These images are moodboard references, not client work.',
+    ...pageSeo('gallery'),
     path: '/gallery',
   }),
   component: GalleryPage,
@@ -14,6 +13,6 @@ export const Route = createFileRoute('/gallery')({
 
 function GalleryPage() {
   return <section className="page-content section-space"><div className="container"><PageHeading eyebrow="THE BEAUTY MOODBOARD" title="A little inspiration." text="A collection of illustrative beauty references—not a client portfolio or examples of Queen’s Beauty Parlour’s work." />
-    <div className="gallery-page-grid">{galleryImages.map((item, index) => <figure className={`gallery-page-item gallery-page-item-${index % 3}`} key={item.name}><img src={item.image} alt={`Temporary illustrative beauty inspiration: ${item.name}`} loading="lazy" /><figcaption>{item.name}<span>INSPIRATION IMAGE</span></figcaption></figure>)}</div>
+    <div className="gallery-page-grid">{galleryImages.map((item, index) => <figure className={`gallery-page-item gallery-page-item-${index % 3}`} key={item.name}><img src={item.image} alt={item.alt} loading="lazy" /><figcaption>{item.name}<span>INSPIRATION IMAGE</span></figcaption></figure>)}</div>
   </div></section>;
 }

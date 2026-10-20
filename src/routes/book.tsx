@@ -4,13 +4,12 @@ import { CalendarDays, Flower2 } from 'lucide-react';
 import { BookingForm } from '@/components/beauty/booking-form';
 import { PageHeading } from '@/components/beauty/presentation';
 import { getServiceFromSearch } from '@/lib/beauty';
-import { pageHead } from '@/lib/seo';
+import { pageHead, pageSeo } from '@/lib/seo';
 
 export const Route = createFileRoute('/book')({
   validateSearch: (search: Record<string, unknown>) => ({ service: getServiceFromSearch(search['service']) }),
   head: () => pageHead({
-    title: 'Send a Beauty Enquiry | Queen’s Beauty Parlour',
-    description: 'Choose a beauty service, share your preferences and send an appointment enquiry to Queen’s Beauty Parlour through WhatsApp.',
+    ...pageSeo('book'),
     path: '/book',
   }),
   component: BookPage,

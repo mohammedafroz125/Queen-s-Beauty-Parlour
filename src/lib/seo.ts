@@ -1,4 +1,4 @@
-import { beautyBusiness, serviceNames } from './beauty';
+import { beautyBusiness, content, serviceNames } from './beauty';
 
 export const siteUrl = 'https://queensbeauty.vercel.app';
 
@@ -58,3 +58,7 @@ export const beautySalonStructuredData = {
     itemOffered: { '@type': 'Service', name },
   })),
 };
+
+export function pageSeo(key: keyof typeof content.pageSeo) {
+  return content.pageSeo[key];
+}

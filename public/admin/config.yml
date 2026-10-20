@@ -1,0 +1,130 @@
+backend:
+  name: github
+  repo: mohammedafroz125/queens-beauty-booking
+  branch: main
+  squash_merges: true
+
+site_url: https://queensbeauty.vercel.app
+display_url: https://queensbeauty.vercel.app
+publish_mode: editorial_workflow
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: website
+    label: Website content
+    files:
+      - name: site
+        label: All website content
+        file: content/site.json
+        format: json
+        fields:
+          - label: Business details
+            name: business
+            widget: object
+            fields:
+              - { label: Business name, name: name, widget: string }
+              - { label: Location, name: location, widget: string, hint: Use the verified locality spelling only. }
+              - { label: WhatsApp number, name: whatsappNumber, widget: string }
+              - { label: Business hours, name: businessHours, widget: string }
+              - { label: Phone, name: phone, widget: string, required: false }
+          - label: Site SEO defaults
+            name: seo
+            widget: object
+            fields:
+              - { label: Site title, name: siteTitle, widget: string }
+              - { label: Site description, name: siteDescription, widget: text }
+          - label: Homepage
+            name: homepage
+            widget: object
+            fields:
+              - { label: Hero eyebrow, name: heroEyebrow, widget: string }
+              - { label: Hero title line one, name: heroTitleLineOne, widget: string }
+              - { label: Hero title line two, name: heroTitleLineTwo, widget: string }
+              - { label: Hero script, name: heroScript, widget: string }
+              - { label: Hero introduction, name: heroIntro, widget: text }
+              - { label: Hero image, name: heroImage, widget: image }
+              - { label: Hero image alt text, name: heroImageAlt, widget: string }
+              - { label: Location label, name: locationLabel, widget: string }
+              - { label: Services eyebrow, name: servicesEyebrow, widget: string }
+              - { label: Services title, name: servicesTitle, widget: string }
+              - { label: Services introduction, name: servicesIntro, widget: text }
+              - { label: About eyebrow, name: aboutEyebrow, widget: string }
+              - { label: About title, name: aboutTitle, widget: string }
+              - { label: About text, name: aboutText, widget: text }
+              - { label: Gallery eyebrow, name: galleryEyebrow, widget: string }
+              - { label: Gallery title, name: galleryTitle, widget: string }
+              - { label: Inspiration eyebrow, name: inspirationEyebrow, widget: string }
+              - { label: Inspiration title, name: inspirationTitle, widget: string }
+              - { label: Inspiration text, name: inspirationText, widget: text }
+              - { label: FAQ eyebrow, name: faqEyebrow, widget: string }
+              - { label: FAQ title, name: faqTitle, widget: string }
+          - label: Services
+            name: services
+            widget: list
+            summary: '{{name}} ({{category}})'
+            fields:
+              - { label: Service name, name: name, widget: string }
+              - { label: Category, name: category, widget: string }
+              - { label: Description, name: text, widget: text }
+              - { label: Image, name: image, widget: image }
+              - { label: Visible, name: visible, widget: boolean, default: true }
+          - label: Makeup looks
+            name: makeupLooks
+            widget: list
+            summary: '{{name}}'
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Description, name: text, widget: text }
+              - { label: Image, name: image, widget: image }
+              - { label: Visible, name: visible, widget: boolean, default: true }
+          - label: Gallery
+            name: gallery
+            widget: list
+            summary: '{{name}}'
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Image, name: image, widget: image }
+              - { label: Alt text, name: alt, widget: string }
+              - { label: Visible, name: visible, widget: boolean, default: true }
+          - label: FAQs
+            name: faqs
+            widget: list
+            summary: '{{question}}'
+            fields:
+              - { label: Question, name: question, widget: string }
+              - { label: Answer, name: answer, widget: text }
+              - { label: Visible, name: visible, widget: boolean, default: true }
+          - label: Testimonials
+            name: testimonials
+            widget: list
+            summary: '{{name}}'
+            fields:
+              - { label: Quote, name: quote, widget: text }
+              - { label: Name, name: name, widget: string }
+              - { label: Service, name: service, widget: string }
+              - { label: Visible, name: visible, widget: boolean, default: true }
+          - label: About page
+            name: about
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - label: About points
+                name: points
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+          - label: Page SEO
+            name: pageSeo
+            widget: object
+            fields:
+              - { label: Home title, name: home, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text }] }
+              - { label: Services title, name: services, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text }] }
+              - { label: Makeup looks title, name: makeupLooks, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text }] }
+              - { label: Gallery title, name: gallery, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text }] }
+              - { label: About title, name: about, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text }] }
+              - { label: Booking title, name: book, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text }] }
+              - { label: Contact title, name: contact, widget: object, fields: [{ label: Title, name: title, widget: string }, { label: Description, name: description, widget: text }] }

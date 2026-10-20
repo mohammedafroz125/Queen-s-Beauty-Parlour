@@ -3,12 +3,11 @@ import { ArrowUpRight, Clock3, MapPin, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageHeading } from '@/components/beauty/presentation';
 import { beautyBusiness, whatsappUrl } from '@/lib/beauty';
-import { pageHead } from '@/lib/seo';
+import { pageHead, pageSeo } from '@/lib/seo';
 
 export const Route = createFileRoute('/contact')({
   head: () => pageHead({
-    title: 'Contact Queen’s Beauty Parlour | Borananda, Hyderabad',
-    description: 'Contact Queen’s Beauty Parlour on WhatsApp, view confirmed hours and find the Borananda, Hyderabad location label.',
+    ...pageSeo('contact'),
     path: '/contact',
   }),
   component: ContactPage,
